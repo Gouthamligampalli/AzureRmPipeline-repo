@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Linked_ARM_Service_Connection'
+    subscriptionId: '8170716f-eeeb-4744-988a-d267a5373048'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'linkedarm1rg'
+    location: 'Central US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'https://linkedarm1store.blob.core.windows.net/templates/linkedStorageAccount.json?sp=r&st=2021-01-13T10:16:56Z&se=2021-01-13T18:16:56Z&spr=https&sv=2019-12-12&sr=b&sig=CH0SK9sRUWDa2VYNSnv5rwx5vCXljL9AE2VPutowZvk%3D'
+    csmParametersFile: 'https://linkedarm1store.blob.core.windows.net/templates/linkedStorageAccount.json?sp=r&st=2021-01-13T10:16:56Z&se=2021-01-13T18:16:56Z&spr=https&sv=2019-12-12&sr=b&sig=CH0SK9sRUWDa2VYNSnv5rwx5vCXljL9AE2VPutowZvk%3D'
+    deploymentMode: 'Incremental'
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
