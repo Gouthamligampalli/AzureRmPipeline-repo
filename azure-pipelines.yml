@@ -15,8 +15,8 @@ steps:
     resourceGroupName: 'linkedarm1rg'
     location: 'Central US'
     templateLocation: 'Linked artifact'
-    csmFile: 'https://linkedarm1store.blob.core.windows.net/templates/azuredeploy.json'
-    csmParametersFile: 'https://linkedarm1store.blob.core.windows.net/templates/azuredeploydev.parameters.json'
+    csmFile: 'https://linkedarm1store.blob.core.windows.net/templates/linkedStorageAccount.json?sp=r&st=2021-01-18T04:37:56Z&se=2021-01-18T12:37:56Z&spr=https&sv=2019-12-12&sr=b&sig=siAvPTgqZEqsEUoD7SPPjU0KMBSx0nhrnmL%2BaKrG1Gs%3D'
+    csmParametersFile: 'https://linkedarm1store.blob.core.windows.net/templates/linkedStorageAccount.json?sp=r&st=2021-01-18T04:37:56Z&se=2021-01-18T12:37:56Z&spr=https&sv=2019-12-12&sr=b&sig=siAvPTgqZEqsEUoD7SPPjU0KMBSx0nhrnmL%2BaKrG1Gs%3D'
     deploymentMode: 'Incremental'
 pool:
   vmImage: 'ubuntu-latest'
