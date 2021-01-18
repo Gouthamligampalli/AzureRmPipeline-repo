@@ -5,6 +5,7 @@
 
 trigger:
 - main
+steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -14,11 +15,10 @@ trigger:
     resourceGroupName: 'linkedarm1rg'
     location: 'Central US'
     templateLocation: 'Linked artifact'
-    csmFile: 'https://linkedarm1store.blob.core.windows.net/templates/linkedStorageAccount.json?sp=r&st=2021-01-13T10:16:56Z&se=2021-01-13T18:16:56Z&spr=https&sv=2019-12-12&sr=b&sig=CH0SK9sRUWDa2VYNSnv5rwx5vCXljL9AE2VPutowZvk%3D'
-    csmParametersFile: 'https://linkedarm1store.blob.core.windows.net/templates/linkedStorageAccount.json?sp=r&st=2021-01-13T10:16:56Z&se=2021-01-13T18:16:56Z&spr=https&sv=2019-12-12&sr=b&sig=CH0SK9sRUWDa2VYNSnv5rwx5vCXljL9AE2VPutowZvk%3D'
+    csmFile: 'https://linkedarm1store.blob.core.windows.net/templates/azuredeploy.json?sp=r&st=2021-01-18T04:26:59Z&se=2021-01-18T12:26:59Z&spr=https&sv=2019-12-12&sr=b&sig=g2tkMlCOy%2FYqsyD340%2F%2BLt8zy%2BSRog6UKiWFHER5nQw%3D'
+    csmParametersFile: 'https://linkedarm1store.blob.core.windows.net/templates/azuredeploydev.parameters.json?sp=r&st=2021-01-18T04:27:39Z&se=2021-01-18T12:27:39Z&spr=https&sv=2019-12-12&sr=b&sig=Lj4nG55My2mNA3TVZCuda1gRu0GOjbdsmsEiixoM%2BIA%3D'
     deploymentMode: 'Incremental'
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
 
